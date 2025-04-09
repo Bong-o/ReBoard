@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/common/head :: HeadFragment}"></head>
+<body>
+	<header th:replace="~{fragments/common/header :: HeaderFragment}"></header>
+	<nav th:replace="~{fragments/common/nav :: NavFragment}"></nav>
+	<section class="container mt-4" style="height: 70vh">
+		<div class="card text-center" style="height: 100%">
+			<form th:action="@{/board/free/update}" method="post" 
+				  th:object="${post}" enctype="multipart/form-data">
+				<input type="hidden" th:field="*{no}">
+				<input type="hidden" th:field="*{authorDTO.authorId}">
+				<div class="card-header">
+					<input type="text" th:field="*{title}">
+				</div>
+				<div class="card-body" style="height: 500px">
+					<div class="d-flex justify-content-center mb-3">
+						<div class="mx-3">
+							작성자:
+							<span id="fb-writer" th:text="${post.authorDTO.authorId}"></span>
+													<!-- 읽기전용  -->
+						</div>
+						<div class="mx-3">
+							작성일:
+							<span id="fb-date" th:text="${post.createDate}"></span>
+						</div>
+						<div class="mx-3">
+							조회수:
+							<span id="fb-views" th:text="${post.viewCount}"></span>
+						</div>
+					</div>
+					<hr>
+					<div style="margin-top: 20px; margin-bottom: 20px;">
+						<textarea rows="15" th:field="*{content}"></textarea>
+					</div>
+				</div>
+				
+				<label for="file">파일 업로드:</label>
+	            <input type="file" id="file" name="file">
+	            
+				<div class="card-footer d-flex justify-content-center">
+					<button type="button" class="btn btn-secondary mx-2" onclick="window.history.back()">뒤로가기</button>
+					<button type="submit" class="btn btn-primary mx-2">수정하기</button>
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<footer th:replace="~{fragments/common/footer :: FooterFragment}"></footer>
+</body>
+</html>
+
+
+

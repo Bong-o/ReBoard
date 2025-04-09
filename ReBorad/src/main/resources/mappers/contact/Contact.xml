@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="kr.co.green.contact.model.mapper.ContactMapper">
+	
+	<insert id="enroll">
+		INSERT INTO contact_board VALUES(contact_board_seq.nextval, 
+										 #{name},
+										 #{email},
+										 #{content},
+										 DEFAULT)
+	</insert>
+	
+	<resultMap id="contactResultMap" type="kr.co.green.contact.model.dto.ContactDTO">
+		<result property="no" column="no"></result>
+		<result property="name" column="name"></result>
+		<result property="email" column="email"></result>
+		<result property="content" column="content"></result>
+		<result property="createDate" column="createDate"></result>
+	</resultMap>
+	
+	<select id="getAllPosts" resultMap="contactResultMap">
+		SELECT no,
+			   name,
+			   email,
+			   content,
+			   createDate
+		FROM contact_board	   
+	</select>
+	
+	<select id="detail" resultMap="contactResultMap">
+		SELECT name,
+			   email,
+			   content,
+			   createDate
+		FROM contact_board
+		WHERE NO = #{no}	   
+	</select>
+	
+	
+	
+	
+	
+	
+</mapper>	

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시판 리스트</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+
+        .board-container {
+            width: 80%;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .board-header {
+            background-color: #f5f5f5;
+            padding: 10px 15px;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .board-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .board-table th, .board-table td {
+            padding: 10px 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .board-table th {
+            background-color: #f9f9f9;
+            font-weight: bold;
+        }
+
+        .board-table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .pagination {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .pagination li {
+            margin: 0 5px;
+        }
+
+        .pagination a {
+            display: inline-block;
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .pagination a:hover {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .pagination .active a {
+            background-color: #007bff;
+            color: white;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="board-container">
+        <div class="board-header">게시판 리스트</div>
+        <table class="board-table">
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>제목</th>
+                    <th>작성자</th>
+                    <th>작성일</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="post, iterStat : ${posts}">
+                    <td th:text="${pi.row - iterStat.index}"></td>
+                    <td th:text="${post.title}"></td>
+                    <td th:text="${post.author}"></td>
+                    <td th:text="${post.createdDate}"></td>
+                </tr>
+                <!-- 페이지 데이터가 추가됩니다 -->
+            </tbody>
+        </table>
+        <ul class="pagination">
+            <!-- 
+					왼쪽 버튼 
+					1. 1~10 페이지일 때 : 아무런 동작하지 않게
+					2. 11 페이지 이상일 때 : 직전 페이지 마지막(endPage)
+				-->
+				<li class="page-item" style="margin-right: 0px">
+				
+				<a class="page-link" th:if="${pi.currentPage <= pi.pageLimit}" 
+				   th:href="@{/test/list(currentPage=1)}" aria-label="Previous"
+				   style="margin-right: 0px"> <span aria-hidden="true">&laquo;</span>
+				</a> 
+				
+				<a class="page-link" th:if="${pi.currentPage > pi.pageLimit}" 
+				   th:href="@{/test/list(currentPage=${pi.endPage - pi.pageLimit})}" aria-label="Previous"
+				   style="margin-right: 0px"> <span aria-hidden="true">&laquo;</span>
+				</a>
+				</li>
+				
+				
+				<!-- 페이지 버튼 -->
+				<li class="page-item" style="margin-right: 0px"
+					th:each="page : ${#numbers.sequence(pi.startPage, pi.endPage)}">
+					<a class="page-link" th:href="@{/test/list(currentPage=${page})}" 
+					   th:text="${page}" style="margin-right: 0px"></a>
+				</li>
+				
+
+				<!-- 
+					오른쪽 버튼 
+					1. 끝 페이지일 때 : 아무런 동작을 하지 않아야 함	
+				-->
+				<li class="page-item" style="margin-right: 0px">
+					<a class="page-link" th:if="${pi.endPage == pi.maxPage}" 
+					   th:href="@{/test/list(currentPage=${pi.endPage})}" aria-label="Next"> 
+						<span aria-hidden="true">&raquo;</span>
+					</a>
+					
+					<a	class="page-link" th:if="${pi.endPage != pi.maxPage}" 
+						th:href="@{/test/list(currentPage=${pi.endPage+1})}" 
+						aria-label="Next"> <span
+						aria-hidden="true">&raquo;</span>
+					</a>
+				</li>
+        </ul>
+    </div>
+</body>
+</html>

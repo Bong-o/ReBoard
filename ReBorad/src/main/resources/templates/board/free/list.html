@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="~{fragments/common/head :: HeadFragment}"></head>
+<body>
+	<header th:replace="~{fragments/common/header :: HeaderFragment}"></header>
+	<nav th:replace="~{fragments/common/nav :: NavFragment}"></nav>
+
+	<section>
+		<form action="/board/free/list" method="GET" class="d-flex align-items-center">
+			<select
+				class="form-select me-2" id="inputGroupSelect02" name="category"
+				style="width: 100px; height: 46px;">
+				<option value="title" th:selected="${searchDTO.category == 'title'}" selected>제목</option>
+				<option value="content" th:selected="${searchDTO.category == 'content'}">내용</option>
+				<option value="memberId" th:selected="${searchDTO.category == 'memberId'}">아이디</option>
+			</select> 
+			<input type="text" class="form-control me-2" name="searchText"
+				th:value="${searchDTO.searchText}"
+				placeholder="검색어를 입력해주세요." style="width: 500px; margin-bottom: 0px;"
+				aria-label="Recipient's username" aria-describedby="button-addon2">
+			<button class="btn btn-outline-secondary" style="height: 46px;"
+				type="submit" id="button-addon2">검색</button>
+		</form>
+		
+		<div class="table-container">
+			<table>
+				<tr>
+					<th>글번호</th>
+					<th>제목</th>
+					<th>작성자</th>
+					<th>작성일</th>
+					<th>조회수</th>
+				</tr>
+				<tr th:each="post, iterStat : ${posts}"
+					th:attr="onclick=|location.href='@{/board/free/detail(no=${post.no})}'|">
+					<td th:text="${pi.row - iterStat.index}"></td>
+					<td th:text="${post.title}"></td>
+					<td th:text="${post.authorDTO.authorId}"></td>
+					<td th:text="${post.createDate}"></td>
+					<td th:text="${post.viewCount}"></td>
+				</tr>
+			</table>
+			<!-- <button th:if="${session.memberName != null}" class="add-button"
+				onclick="window.location.href = '/ex3/board/free/enrollForm'">등록</button> -->
+			<button th:if="${session.memberName != null}" class="add-button"
+				    th:attr="onclick=|location.href ='@{/board/free/enrollForm}'|">등록</button>	
+		</div>
+
+		<nav aria-label="Page navigation example"
+			style="background-color: white;">
+			<ul class="pagination" style="justify-content: center;">
+				<!-- 
+					왼쪽 버튼 
+					1. 1~10 페이지일 때 : 아무런 동작하지 않게
+					2. 11 페이지 이상일 때 : 직전 페이지 마지막(endPage)
+				-->
+				<li class="page-item" style="margin-right: 0px">
+				
+				<a class="page-link" th:if="${pi.currentPage <= pi.pageLimit}" 
+				   th:href="@{/board/free/list(currentPage=1)}" aria-label="Previous"
+				   style="margin-right: 0px"> <span aria-hidden="true">&laquo;</span>
+				</a> 
+				
+				<a class="page-link" th:if="${pi.currentPage > pi.pageLimit}" 
+				   th:href="@{/board/free/list(currentPage=${pi.endPage - pi.pageLimit})}" aria-label="Previous"
+				   style="margin-right: 0px"> <span aria-hidden="true">&laquo;</span>
+				</a>
+				</li>
+				
+				
+				<!-- 페이지 버튼 -->
+				<li class="page-item" style="margin-right: 0px"
+					th:each="page : ${#numbers.sequence(pi.startPage, pi.endPage)}">
+					<a class="page-link" th:href="@{/board/free/list(currentPage=${page}, category=${searchDTO.category}, searchText=${searchDTO.searchText})}" 
+					   th:text="${page}" style="margin-right: 0px"></a>
+				</li>
+				
+
+				<!-- 
+					오른쪽 버튼 
+					1. 끝 페이지일 때 : 아무런 동작을 하지 않아야 함	
+				-->
+				<li class="page-item" style="margin-right: 0px">
+					<a class="page-link" th:if="${pi.endPage == pi.maxPage}" 
+					   th:href="@{/board/free/list(currentPage=${pi.endPage})}" aria-label="Next"> 
+						<span aria-hidden="true">&raquo;</span>
+					</a>
+					
+					<a	class="page-link" th:if="${pi.endPage != pi.maxPage}" 
+						th:href="@{/board/free/list(currentPage=${pi.endPage+1})}" 
+						aria-label="Next"> <span
+						aria-hidden="true">&raquo;</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+
+	</section>
+
+	<footer th:replace="~{fragments/common/footer :: FooterFragment}"></footer>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="~{fragments/common/head :: HeadFragment}"></head>
+<body>
+	<header th:replace="~{fragments/common/header :: HeaderFragment}"></header>
+	<nav th:replace="~{fragments/common/nav :: NavFragment}"></nav>
+
+  <section id="post-form">
+    <h2>새 글 작성</h2>
+    <form th:action="@{/board/free/enroll}" method="POST" th:object="${boardDTO}" 
+    	  enctype="multipart/form-data">
+        <label for="title">제목:</label>
+        <input type="text" id="title" name="title" th:field="*{title}" required>
+        
+        <label for="author">글쓴이:</label>
+        <input type="text" id="author" name="author" th:value="${session.memberId}" readonly required>
+        
+        <label for="content">내용:</label>
+        <textarea id="content" name="content" rows="4" th:field="*{content}" required></textarea>
+        
+        <label for="file">파일 업로드:</label>
+        <input type="file" id="file" name="file">
+ 		       
+        <button type="submit">작성</button>
+    </form>
+</section>
+
+  <footer th:replace="~{fragments/common/footer :: FooterFragment}"></footer>
+
+</body>
+</html>

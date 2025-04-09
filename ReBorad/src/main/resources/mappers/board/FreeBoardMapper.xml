@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN" "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper
+	namespace="kr.co.green.board.model.mapper.BoardMapper">
+
+	<resultMap id="boardResultMap"
+		type="kr.co.green.board.model.dto.BoardDTO">
+		<result property="no" column="NO"></result>
+		<result property="title" column="title"></result>
+		<result property="content" column="content"></result>
+		<result property="createDate" column="created_date"></result>
+		<result property="updateDate" column="update_date"></result>
+		<result property="viewCount" column="view_count"></result>
+		
+		<association property="authorDTO" javaType="kr.co.green.board.model.dto.AuthorDTO">
+			<result property="authorId" column="id"></result>
+		</association>
+		
+		<association property="fileDTO" javaType="kr.co.green.board.model.dto.FileDTO">
+			<result property="changeName" column="change_name"></result>
+			<result property="folderNamePath" column="folder_name_path"></result>
+		</association>
+	</resultMap>
+
+	<!-- <select id="getAllPosts" resultMap="boardResultMap">
+		SELECT fb.no,
+		fb.title,
+		fb.content,
+		m.name AS memberName,
+		fb.created_date AS createDate,
+		fb.updated_date AS updateDate,
+		fb.view_count as ViewCount
+		FROM FREE_BOARD fb
+		JOIN member m ON fb.author_no = m.no
+	</select> -->
+
+	<select id="getTotalCount">
+		SELECT COUNT(*) FROM free_board fb
+		
+		<choose>
+			<when test="category.equals('title')">
+				WHERE title LIKE '%' || #{searchText} || '%'
+			</when>
+			<when test="category.equals('content')">
+				WHERE content LIKE '%' || #{searchText} || '%'
+			</when>
+			<when test="category.equals('memberId')">
+				JOIN member m ON fb.author_no = m.no
+				WHERE m.id LIKE '%' || #{searchText} || '%'
+			</when>
+		</choose>
+		
+	</select>
+
+	<select id="getAllPosts" resultMap="boardResultMap">
+		SELECT *
+		FROM (SELECT fb.NO,
+		fb.title,
+		fb.content,
+		m.id,
+		fb.created_date,
+		fb.view_count,
+		ROW_NUMBER () OVER (ORDER BY created_date DESC) AS rn
+		FROM free_board fb
+		JOIN MEMBER m ON fb.AUTHOR_NO = m."NO"
+		<choose>
+			<when test="searchDTO.category.equals('title')">
+				WHERE title LIKE '%' || #{searchDTO.searchText} || '%'
+			</when>
+			<when test="searchDTO.category.equals('content')">
+				WHERE content LIKE '%' || #{searchDTO.searchText} || '%'
+			</when>
+			<when test="searchDTO.category.equals('memberId')">
+				WHERE memberId LIKE '%' || #{searchDTO.searchText} || '%'
+			</when>
+		</choose>
+		)
+		WHERE rn BETWEEN #{pi.offset} AND #{pi.limit}
+		
+	</select>
+	
+	<insert id="enroll">
+		<selectKey keyProperty="no" resultType="int" order="BEFORE">
+			SELECT free_board_seq.nextval FROM dual
+		</selectKey>
+		
+		INSERT INTO FREE_BOARD VALUES(#{no}, 
+									  #{title}, 
+									  #{content}, 
+									  #{authorDTO.authorNo}, 
+									  DEFAULT, 
+									  NULL, 
+									  DEFAULT)
+	</insert>
+	
+	<insert id="enrollFile">
+		INSERT INTO free_board_file VALUES (free_board_file_seq.nextval,
+										    #{fileDTO.changeName},
+										    #{fileDTO.originalName},
+										    #{fileDTO.extension},
+										    #{fileDTO.size},
+										    #{fileDTO.LOCAL_PATH},
+										    #{fileDTO.RESOURCES_PATH},
+										    #{fileDTO.folderNamePath},
+										    SYSDATE,
+										    #{no})
+	</insert>
+	
+	<select id="detail" resultMap="boardResultMap">
+		SELECT fb.NO, 
+		       fb.TITLE, 
+		       fb.CONTENT, 
+		       m.id,
+		       fb.CREATED_DATE,
+		       fb.VIEW_COUNT
+		FROM FREE_BOARD fb
+		JOIN member m ON fb.author_no = m.no 
+		WHERE fb.NO = #{no}
+	</select>
+	
+	<select id="detailFile" resultMap="boardResultMap">
+		SELECT fb.NO, 
+		       fb.TITLE, 
+		       fb.CONTENT, 
+		       m.id,
+		       fb.CREATED_DATE,
+		       fb.VIEW_COUNT,
+		       fbf.change_name,
+		       fbf.folder_name_path
+		FROM FREE_BOARD fb
+		JOIN member m ON fb.author_no = m.no 
+		JOIN free_board_file fbf ON fb.no = fbf.free_board_no
+		WHERE fb.NO = #{no}
+	</select>
+	
+	<select id="getFileInfo" resultMap="boardResultMap">
+		SELECT change_name, folder_name_path FROM FREE_BOARD_FILE
+		WHERE FREE_BOARD_NO = #{no}
+	</select>
+	
+	<update id="addViewCount">
+		UPDATE free_board
+		SET view_count = view_count+1
+		WHERE no = #{no}
+	</update>
+	
+	<select id="updateForm">
+		SELECT fb.NO, 
+		       fb.TITLE, 
+		       fb.CONTENT, 
+		       m.id AS memberId,
+		       fb.CREATED_DATE AS createDate,
+		       fb.VIEW_COUNT AS viewCount
+		FROM FREE_BOARD fb
+		JOIN member m ON fb.author_no = m.no 
+		WHERE fb.NO = #{no}
+	</select>
+ 	
+	<select id="getAuthorNo" resultType="int">
+		SELECT AUTHOR_NO AS authorNo
+		FROM FREE_BOARD fb
+		WHERE NO = #{no}
+	</select>
+	
+	<update id="update">
+		UPDATE FREE_BOARD SET TITLE = #{title}, CONTENT = #{content}, UPDATED_DATE = SYSDATE
+		WHERE NO = #{no} 
+	</update>
+	
+	<delete id="delete">
+		DELETE FROM FREE_BOARD WHERE NO = #{no}
+	</delete>
+	
+	<delete id="deleteFile">
+		DELETE FROM free_board_file
+		WHERE change_name = #{fileName}
+	</delete>
+	
+</mapper>
