@@ -1,0 +1,2 @@
+[2025-04-11 09:56:48.836]  WARN 23764 --- [p-nio-80-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-04-11 09:56:51.117]  WARN 23764 --- [p-nio-80-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]

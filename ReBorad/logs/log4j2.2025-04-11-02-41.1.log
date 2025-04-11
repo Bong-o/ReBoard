@@ -1,0 +1,192 @@
+[2025-04-11 14:41:28.150]  INFO 23764 --- [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2025-04-11 14:41:28.156]  INFO 23764 --- [     Thread-707] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+[2025-04-11 14:41:28.156]  INFO 23764 --- [tomcat-shutdown] o.a.c.h.Http11NioProtocol                : Pausing ProtocolHandler ["http-nio-80"]
+[2025-04-11 14:41:28.885]  INFO 23764 --- [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+[2025-04-11 14:41:28.886]  INFO 23764 --- [     Thread-707] o.a.c.h.Http11NioProtocol                : Stopping ProtocolHandler ["http-nio-80"]
+[2025-04-11 14:41:28.897]  INFO 23764 --- [     Thread-707] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[2025-04-11 14:41:28.898]  INFO 23764 --- [     Thread-707] c.z.h.HikariDataSource                   : HikariPool-170 - Shutdown initiated...
+[2025-04-11 14:41:28.910]  INFO 23764 --- [     Thread-707] c.z.h.HikariDataSource                   : HikariPool-170 - Shutdown completed.
+[2025-04-11 14:41:28.998]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : Starting ReBoardApplication using Java 17.0.12 with PID 23764 (C:\Users\bongo\git\ReBoard\ReBorad\bin\main started by bongo in C:\Users\bongo\git\ReBoard\ReBorad)
+[2025-04-11 14:41:28.998]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : No active profile set, falling back to 1 default profile: "default"
+[2025-04-11 14:41:29.167]  INFO 23764 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2025-04-11 14:41:29.188]  INFO 23764 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 2 JPA repository interfaces.
+[2025-04-11 14:41:29.262]  INFO 23764 --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 80 (http)
+[2025-04-11 14:41:29.262]  INFO 23764 --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-80"]
+[2025-04-11 14:41:29.262]  INFO 23764 --- [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+[2025-04-11 14:41:29.262]  INFO 23764 --- [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.34]
+[2025-04-11 14:41:29.287]  INFO 23764 --- [  restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+[2025-04-11 14:41:29.287]  INFO 23764 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 287 ms
+[2025-04-11 14:41:29.316]  INFO 23764 --- [  restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+[2025-04-11 14:41:29.318]  INFO 23764 --- [  restartedMain] o.h.c.i.RegionFactoryInitiator           : HHH000026: Second-level cache disabled
+[2025-04-11 14:41:29.324]  INFO 23764 --- [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+[2025-04-11 14:41:29.324]  INFO 23764 --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-171 - Starting...
+[2025-04-11 14:41:29.325]  WARN 23764 --- [  restartedMain] c.z.h.u.DriverDataSource                 : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[2025-04-11 14:41:29.414]  INFO 23764 --- [  restartedMain] c.z.h.p.HikariPool                       : HikariPool-171 - Added connection oracle.jdbc.driver.T4CConnection@6599e134
+[2025-04-11 14:41:29.415]  INFO 23764 --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-171 - Start completed.
+[2025-04-11 14:41:29.422]  INFO 23764 --- [  restartedMain] o.h.o.c.pooling                          : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-171)']
+	Database driver: undefined/unknown
+	Database version: 21.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2025-04-11 14:41:29.463]  INFO 23764 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-04-11 14:41:29.464]  INFO 23764 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2025-04-11 14:41:29.514]  WARN 23764 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2025-04-11 14:41:29.520]  WARN 23764 --- [  restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 2fa51303-ad8f-4ce2-9886-b7f6aa91067b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2025-04-11 14:41:29.520]  INFO 23764 --- [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+[2025-04-11 14:41:29.612]  INFO 23764 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+[2025-04-11 14:41:29.618]  INFO 23764 --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-80"]
+[2025-04-11 14:41:29.620]  INFO 23764 --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 80 (http) with context path '/'
+[2025-04-11 14:41:29.623]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : Started ReBoardApplication in 0.655 seconds (process running for 17212.227)
+[2025-04-11 14:41:29.623]  INFO 23764 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+[2025-04-11 14:41:33.164]  INFO 23764 --- [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2025-04-11 14:41:33.165]  INFO 23764 --- [     Thread-711] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+[2025-04-11 14:41:33.166]  INFO 23764 --- [tomcat-shutdown] o.a.c.h.Http11NioProtocol                : Pausing ProtocolHandler ["http-nio-80"]
+[2025-04-11 14:41:33.908]  INFO 23764 --- [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+[2025-04-11 14:41:33.908]  INFO 23764 --- [     Thread-711] o.a.c.h.Http11NioProtocol                : Stopping ProtocolHandler ["http-nio-80"]
+[2025-04-11 14:41:33.910]  INFO 23764 --- [     Thread-711] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[2025-04-11 14:41:33.910]  INFO 23764 --- [     Thread-711] c.z.h.HikariDataSource                   : HikariPool-171 - Shutdown initiated...
+[2025-04-11 14:41:33.920]  INFO 23764 --- [     Thread-711] c.z.h.HikariDataSource                   : HikariPool-171 - Shutdown completed.
+[2025-04-11 14:41:34.016]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : Starting ReBoardApplication using Java 17.0.12 with PID 23764 (C:\Users\bongo\git\ReBoard\ReBorad\bin\main started by bongo in C:\Users\bongo\git\ReBoard\ReBorad)
+[2025-04-11 14:41:34.017]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : No active profile set, falling back to 1 default profile: "default"
+[2025-04-11 14:41:34.159]  INFO 23764 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2025-04-11 14:41:34.181]  INFO 23764 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 2 JPA repository interfaces.
+[2025-04-11 14:41:34.254]  INFO 23764 --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 80 (http)
+[2025-04-11 14:41:34.255]  INFO 23764 --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-80"]
+[2025-04-11 14:41:34.255]  INFO 23764 --- [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+[2025-04-11 14:41:34.255]  INFO 23764 --- [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.34]
+[2025-04-11 14:41:34.273]  INFO 23764 --- [  restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+[2025-04-11 14:41:34.273]  INFO 23764 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 255 ms
+[2025-04-11 14:41:34.302]  INFO 23764 --- [  restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+[2025-04-11 14:41:34.305]  INFO 23764 --- [  restartedMain] o.h.c.i.RegionFactoryInitiator           : HHH000026: Second-level cache disabled
+[2025-04-11 14:41:34.314]  INFO 23764 --- [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+[2025-04-11 14:41:34.315]  INFO 23764 --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-172 - Starting...
+[2025-04-11 14:41:34.315]  WARN 23764 --- [  restartedMain] c.z.h.u.DriverDataSource                 : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[2025-04-11 14:41:34.414]  INFO 23764 --- [  restartedMain] c.z.h.p.HikariPool                       : HikariPool-172 - Added connection oracle.jdbc.driver.T4CConnection@4a888a9b
+[2025-04-11 14:41:34.414]  INFO 23764 --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-172 - Start completed.
+[2025-04-11 14:41:34.419]  INFO 23764 --- [  restartedMain] o.h.o.c.pooling                          : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-172)']
+	Database driver: undefined/unknown
+	Database version: 21.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2025-04-11 14:41:34.476]  INFO 23764 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-04-11 14:41:34.478]  INFO 23764 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2025-04-11 14:41:34.573]  WARN 23764 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2025-04-11 14:41:34.578]  WARN 23764 --- [  restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 652b900a-2d4e-4c56-aca3-cd2c2c154a6b
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2025-04-11 14:41:34.578]  INFO 23764 --- [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+[2025-04-11 14:41:34.734]  INFO 23764 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+[2025-04-11 14:41:34.740]  INFO 23764 --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-80"]
+[2025-04-11 14:41:34.746]  INFO 23764 --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 80 (http) with context path '/'
+[2025-04-11 14:41:34.750]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : Started ReBoardApplication in 0.765 seconds (process running for 17217.354)
+[2025-04-11 14:41:34.751]  INFO 23764 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+[2025-04-11 14:41:36.196]  INFO 23764 --- [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2025-04-11 14:41:36.198]  INFO 23764 --- [     Thread-715] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+[2025-04-11 14:41:36.198]  INFO 23764 --- [tomcat-shutdown] o.a.c.h.Http11NioProtocol                : Pausing ProtocolHandler ["http-nio-80"]
+[2025-04-11 14:41:36.891]  INFO 23764 --- [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+[2025-04-11 14:41:36.891]  INFO 23764 --- [     Thread-715] o.a.c.h.Http11NioProtocol                : Stopping ProtocolHandler ["http-nio-80"]
+[2025-04-11 14:41:36.892]  INFO 23764 --- [     Thread-715] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[2025-04-11 14:41:36.893]  INFO 23764 --- [     Thread-715] c.z.h.HikariDataSource                   : HikariPool-172 - Shutdown initiated...
+[2025-04-11 14:41:36.903]  INFO 23764 --- [     Thread-715] c.z.h.HikariDataSource                   : HikariPool-172 - Shutdown completed.
+[2025-04-11 14:41:36.997]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : Starting ReBoardApplication using Java 17.0.12 with PID 23764 (C:\Users\bongo\git\ReBoard\ReBorad\bin\main started by bongo in C:\Users\bongo\git\ReBoard\ReBorad)
+[2025-04-11 14:41:36.997]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : No active profile set, falling back to 1 default profile: "default"
+[2025-04-11 14:41:37.150]  INFO 23764 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2025-04-11 14:41:37.240]  INFO 23764 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 89 ms. Found 2 JPA repository interfaces.
+[2025-04-11 14:41:37.368]  INFO 23764 --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 80 (http)
+[2025-04-11 14:41:37.369]  INFO 23764 --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-80"]
+[2025-04-11 14:41:37.369]  INFO 23764 --- [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+[2025-04-11 14:41:37.369]  INFO 23764 --- [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.34]
+[2025-04-11 14:41:37.390]  INFO 23764 --- [  restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+[2025-04-11 14:41:37.390]  INFO 23764 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 392 ms
+[2025-04-11 14:41:37.435]  INFO 23764 --- [  restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+[2025-04-11 14:41:37.440]  INFO 23764 --- [  restartedMain] o.h.c.i.RegionFactoryInitiator           : HHH000026: Second-level cache disabled
+[2025-04-11 14:41:37.446]  INFO 23764 --- [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+[2025-04-11 14:41:37.447]  INFO 23764 --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-173 - Starting...
+[2025-04-11 14:41:37.447]  WARN 23764 --- [  restartedMain] c.z.h.u.DriverDataSource                 : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[2025-04-11 14:41:37.533]  INFO 23764 --- [  restartedMain] c.z.h.p.HikariPool                       : HikariPool-173 - Added connection oracle.jdbc.driver.T4CConnection@2d783f1f
+[2025-04-11 14:41:37.533]  INFO 23764 --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-173 - Start completed.
+[2025-04-11 14:41:37.536]  INFO 23764 --- [  restartedMain] o.h.o.c.pooling                          : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-173)']
+	Database driver: undefined/unknown
+	Database version: 21.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2025-04-11 14:41:37.561]  INFO 23764 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-04-11 14:41:37.562]  INFO 23764 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2025-04-11 14:41:37.615]  WARN 23764 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2025-04-11 14:41:37.621]  WARN 23764 --- [  restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 1238899d-ea5a-44e7-9429-0372a454ae25
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2025-04-11 14:41:37.621]  INFO 23764 --- [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+[2025-04-11 14:41:37.692]  INFO 23764 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+[2025-04-11 14:41:37.697]  INFO 23764 --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-80"]
+[2025-04-11 14:41:37.700]  INFO 23764 --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 80 (http) with context path '/'
+[2025-04-11 14:41:37.703]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : Started ReBoardApplication in 0.733 seconds (process running for 17220.307)
+[2025-04-11 14:41:37.704]  INFO 23764 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+[2025-04-11 14:41:43.284]  INFO 23764 --- [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2025-04-11 14:41:43.285]  INFO 23764 --- [     Thread-719] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+[2025-04-11 14:41:43.286]  INFO 23764 --- [tomcat-shutdown] o.a.c.h.Http11NioProtocol                : Pausing ProtocolHandler ["http-nio-80"]
+[2025-04-11 14:41:44.082]  INFO 23764 --- [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+[2025-04-11 14:41:44.082]  INFO 23764 --- [     Thread-719] o.a.c.h.Http11NioProtocol                : Stopping ProtocolHandler ["http-nio-80"]
+[2025-04-11 14:41:44.084]  INFO 23764 --- [     Thread-719] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[2025-04-11 14:41:44.085]  INFO 23764 --- [     Thread-719] c.z.h.HikariDataSource                   : HikariPool-173 - Shutdown initiated...
+[2025-04-11 14:41:44.095]  INFO 23764 --- [     Thread-719] c.z.h.HikariDataSource                   : HikariPool-173 - Shutdown completed.
+[2025-04-11 14:41:44.183]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : Starting ReBoardApplication using Java 17.0.12 with PID 23764 (C:\Users\bongo\git\ReBoard\ReBorad\bin\main started by bongo in C:\Users\bongo\git\ReBoard\ReBorad)
+[2025-04-11 14:41:44.184]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : No active profile set, falling back to 1 default profile: "default"
+[2025-04-11 14:41:44.387]  INFO 23764 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2025-04-11 14:41:44.416]  INFO 23764 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 2 JPA repository interfaces.
+[2025-04-11 14:41:44.488]  INFO 23764 --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 80 (http)
+[2025-04-11 14:41:44.489]  INFO 23764 --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-80"]
+[2025-04-11 14:41:44.489]  INFO 23764 --- [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+[2025-04-11 14:41:44.489]  INFO 23764 --- [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.34]
+[2025-04-11 14:41:44.509]  INFO 23764 --- [  restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+[2025-04-11 14:41:44.510]  INFO 23764 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 325 ms
+[2025-04-11 14:41:44.540]  INFO 23764 --- [  restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+[2025-04-11 14:41:44.542]  INFO 23764 --- [  restartedMain] o.h.c.i.RegionFactoryInitiator           : HHH000026: Second-level cache disabled
+[2025-04-11 14:41:44.548]  INFO 23764 --- [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+[2025-04-11 14:41:44.548]  INFO 23764 --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-174 - Starting...
+[2025-04-11 14:41:44.548]  WARN 23764 --- [  restartedMain] c.z.h.u.DriverDataSource                 : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[2025-04-11 14:41:44.638]  INFO 23764 --- [  restartedMain] c.z.h.p.HikariPool                       : HikariPool-174 - Added connection oracle.jdbc.driver.T4CConnection@246f0cab
+[2025-04-11 14:41:44.638]  INFO 23764 --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-174 - Start completed.
+[2025-04-11 14:41:44.642]  INFO 23764 --- [  restartedMain] o.h.o.c.pooling                          : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-174)']
+	Database driver: undefined/unknown
+	Database version: 21.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2025-04-11 14:41:44.672]  INFO 23764 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-04-11 14:41:44.672]  INFO 23764 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2025-04-11 14:41:44.724]  WARN 23764 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2025-04-11 14:41:44.728]  WARN 23764 --- [  restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: e9e1fde7-50e0-4932-b491-4476e3739c26
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2025-04-11 14:41:44.728]  INFO 23764 --- [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+[2025-04-11 14:41:44.798]  INFO 23764 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+[2025-04-11 14:41:44.804]  INFO 23764 --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-80"]
+[2025-04-11 14:41:44.808]  INFO 23764 --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 80 (http) with context path '/'
+[2025-04-11 14:41:44.813]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : Started ReBoardApplication in 0.659 seconds (process running for 17227.417)
+[2025-04-11 14:41:44.814]  INFO 23764 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged

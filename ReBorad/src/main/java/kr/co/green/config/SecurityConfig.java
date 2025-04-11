@@ -20,11 +20,11 @@ public class SecurityConfig {
 	        .authorizeHttpRequests(auth -> auth
 	            .requestMatchers("/",
 			            		 "/member/**",
+			            		 "/board/**",
 			            	     "/css/**", 
 			            	     "/js/**", 
 			            	     "/images/**", 
 			            	     "/static/**", 
-			            	     "/favicon.ico", 
 			            	     "/error").permitAll() // 로그인, 회원가입은 인증 없이
 	            .anyRequest().authenticated()                      // 나머지는 인증 필요
 	        )

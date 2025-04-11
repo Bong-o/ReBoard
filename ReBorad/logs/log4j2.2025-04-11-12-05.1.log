@@ -1,0 +1,16 @@
+[2025-04-11 12:05:07.217]  INFO 23764 --- [p-nio-80-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2025-04-11 12:05:07.229]  INFO 23764 --- [p-nio-80-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+[2025-04-11 12:05:07.230]  INFO 23764 --- [p-nio-80-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 1 ms
+[2025-04-11 12:05:07.403]  WARN 23764 --- [p-nio-80-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-04-11 12:05:09.934]  WARN 23764 --- [p-nio-80-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-04-11 12:05:10.349]  WARN 23764 --- [p-nio-80-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-04-11 12:05:10.544]  WARN 23764 --- [p-nio-80-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-04-11 12:05:10.718]  WARN 23764 --- [p-nio-80-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-04-11 12:05:10.910]  WARN 23764 --- [p-nio-80-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-04-11 12:05:11.098]  WARN 23764 --- [p-nio-80-exec-1] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-04-11 12:05:11.258]  WARN 23764 --- [p-nio-80-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-04-11 12:05:11.438]  WARN 23764 --- [p-nio-80-exec-6] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-04-11 12:05:11.632]  WARN 23764 --- [-nio-80-exec-10] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-04-11 12:05:11.800]  WARN 23764 --- [p-nio-80-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-04-11 12:05:11.956]  WARN 23764 --- [p-nio-80-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-04-11 12:05:12.129]  WARN 23764 --- [p-nio-80-exec-9] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]

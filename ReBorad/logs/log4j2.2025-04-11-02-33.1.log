@@ -1,0 +1,5 @@
+[2025-04-11 14:33:34.302]  INFO 23764 --- [p-nio-80-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+[2025-04-11 14:33:34.305]  INFO 23764 --- [p-nio-80-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
+[2025-04-11 14:33:34.306]  INFO 23764 --- [p-nio-80-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 1 ms
+[2025-04-11 14:33:36.290]  WARN 23764 --- [p-nio-80-exec-4] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: Name for argument of type [int] not specified, and parameter name information not available via reflection. Ensure that the compiler uses the '-parameters' flag.]
+[2025-04-11 14:33:39.958]  WARN 23764 --- [p-nio-80-exec-5] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [java.lang.IllegalArgumentException: Name for argument of type [int] not specified, and parameter name information not available via reflection. Ensure that the compiler uses the '-parameters' flag.]

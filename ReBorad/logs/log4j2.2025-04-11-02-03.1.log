@@ -1,0 +1,53 @@
+[2025-04-11 14:03:18.894]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : Starting ReBoardApplication using Java 17.0.12 with PID 23764 (C:\Users\bongo\git\ReBoard\ReBorad\bin\main started by bongo in C:\Users\bongo\git\ReBoard\ReBorad)
+[2025-04-11 14:03:18.898]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : No active profile set, falling back to 1 default profile: "default"
+[2025-04-11 14:03:19.068]  INFO 23764 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2025-04-11 14:03:19.080]  WARN 23764 --- [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: java.lang.NoClassDefFoundError: Pageable
+[2025-04-11 14:03:19.092]  INFO 23764 --- [  restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+[2025-04-11 14:03:19.094] ERROR 23764 --- [  restartedMain] o.s.b.SpringApplication                  : Application run failed
+
+java.lang.NoClassDefFoundError: Pageable
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[?:?]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402) ~[?:?]
+	at java.base/java.lang.Class.privateGetPublicMethods(Class.java:3427) ~[?:?]
+	at java.base/java.lang.Class.getMethods(Class.java:2019) ~[?:?]
+	at org.springframework.data.util.ReactiveWrappers.usesReactiveType(ReactiveWrappers.java:141) ~[spring-data-commons-3.4.2.jar:3.4.2]
+	at org.springframework.data.repository.core.support.AbstractRepositoryMetadata.isReactiveRepository(AbstractRepositoryMetadata.java:135) ~[spring-data-commons-3.4.2.jar:3.4.2]
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.useRepositoryConfiguration(RepositoryConfigurationExtensionSupport.java:344) ~[spring-data-commons-3.4.2.jar:3.4.2]
+	at org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport.getRepositoryConfigurations(RepositoryConfigurationExtensionSupport.java:98) ~[spring-data-commons-3.4.2.jar:3.4.2]
+	at org.springframework.data.repository.config.RepositoryConfigurationDelegate.registerRepositoriesIn(RepositoryConfigurationDelegate.java:168) ~[spring-data-commons-3.4.2.jar:3.4.2]
+	at org.springframework.boot.autoconfigure.data.AbstractRepositoryConfigurationSourceSupport.registerBeanDefinitions(AbstractRepositoryConfigurationSourceSupport.java:62) ~[spring-boot-autoconfigure-3.4.2.jar:3.4.2]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.lambda$loadBeanDefinitionsFromRegistrars$1(ConfigurationClassBeanDefinitionReader.java:397) ~[spring-context-6.2.2.jar:6.2.2]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721) ~[?:?]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsFromRegistrars(ConfigurationClassBeanDefinitionReader.java:396) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:149) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:121) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:430) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:290) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:349) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:118) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:791) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:609) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) [spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) [spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) [spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) [spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) [spring-boot-3.4.2.jar:3.4.2]
+	at kr.co.green.ReBoardApplication.main(ReBoardApplication.java:10) [main/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.4.1.jar:3.4.1]
+Caused by: java.lang.ClassNotFoundException: Pageable
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[?:?]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[?:?]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[?:?]
+	at java.base/java.lang.Class.forName0(Native Method) ~[?:?]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[?:?]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.4.1.jar:3.4.1]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[?:?]
+	... 33 more
+

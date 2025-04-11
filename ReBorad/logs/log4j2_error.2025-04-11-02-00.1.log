@@ -1,0 +1,9 @@
+[2025-04-11 14:00:47.533] ERROR 23764 --- [p-nio-80-exec-2] o.h.e.j.s.SqlExceptionHelper             : ORA-00933: SQL 명령어가 올바르게 종료되지 않았습니다
+
+https://docs.oracle.com/error-help/db/ora-00933/
+[2025-04-11 14:00:47.582] ERROR 23764 --- [p-nio-80-exec-1] o.h.e.j.s.SqlExceptionHelper             : ORA-00933: SQL 명령어가 올바르게 종료되지 않았습니다
+
+https://docs.oracle.com/error-help/db/ora-00933/
+[2025-04-11 14:00:49.319] ERROR 23764 --- [p-nio-80-exec-5] o.h.e.j.s.SqlExceptionHelper             : ORA-00933: SQL 명령어가 올바르게 종료되지 않았습니다
+
+https://docs.oracle.com/error-help/db/ora-00933/

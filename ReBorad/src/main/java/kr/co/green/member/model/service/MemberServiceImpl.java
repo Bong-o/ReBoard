@@ -1,6 +1,7 @@
 package kr.co.green.member.model.service;
 
 import java.time.LocalDateTime;
+
 import java.util.Optional;
 
 import org.apache.logging.log4j.LogManager;
@@ -14,7 +15,6 @@ import kr.co.green.member.exception.MemberException;
 import kr.co.green.member.model.dto.SigninReqDto;
 import kr.co.green.member.model.dto.SigninResDto;
 import kr.co.green.member.model.dto.SignupReqDto;
-import kr.co.green.member.model.mapper.MemberMapper;
 import kr.co.green.member.model.mapper.MemberRepository;
 import lombok.RequiredArgsConstructor;
 

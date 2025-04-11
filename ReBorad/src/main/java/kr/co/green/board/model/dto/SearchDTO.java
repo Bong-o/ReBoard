@@ -2,6 +2,7 @@ package kr.co.green.board.model.dto;
 
 import lombok.Getter;
 
+
 import lombok.Setter;
 
 @Getter

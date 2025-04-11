@@ -1,0 +1,241 @@
+[2025-04-11 13:33:25.873]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : Starting ReBoardApplication using Java 17.0.12 with PID 23764 (C:\Users\bongo\git\ReBoard\ReBorad\bin\main started by bongo in C:\Users\bongo\git\ReBoard\ReBorad)
+[2025-04-11 13:33:25.876]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : No active profile set, falling back to 1 default profile: "default"
+[2025-04-11 13:33:26.014]  INFO 23764 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2025-04-11 13:33:26.040]  INFO 23764 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 25 ms. Found 2 JPA repository interfaces.
+[2025-04-11 13:33:26.111]  INFO 23764 --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 80 (http)
+[2025-04-11 13:33:26.111]  INFO 23764 --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-80"]
+[2025-04-11 13:33:26.112]  INFO 23764 --- [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+[2025-04-11 13:33:26.112]  INFO 23764 --- [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.34]
+[2025-04-11 13:33:26.129]  INFO 23764 --- [  restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+[2025-04-11 13:33:26.129]  INFO 23764 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 251 ms
+[2025-04-11 13:33:26.155]  INFO 23764 --- [  restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+[2025-04-11 13:33:26.156]  INFO 23764 --- [  restartedMain] o.h.c.i.RegionFactoryInitiator           : HHH000026: Second-level cache disabled
+[2025-04-11 13:33:26.161]  INFO 23764 --- [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+[2025-04-11 13:33:26.162]  INFO 23764 --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-107 - Starting...
+[2025-04-11 13:33:26.162]  WARN 23764 --- [  restartedMain] c.z.h.u.DriverDataSource                 : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[2025-04-11 13:33:26.243]  INFO 23764 --- [  restartedMain] c.z.h.p.HikariPool                       : HikariPool-107 - Added connection oracle.jdbc.driver.T4CConnection@30caa31b
+[2025-04-11 13:33:26.243]  INFO 23764 --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-107 - Start completed.
+[2025-04-11 13:33:26.247]  INFO 23764 --- [  restartedMain] o.h.o.c.pooling                          : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-107)']
+	Database driver: undefined/unknown
+	Database version: 21.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2025-04-11 13:33:26.279]  INFO 23764 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-04-11 13:33:26.279]  INFO 23764 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2025-04-11 13:33:26.285]  WARN 23764 --- [  restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'freeBoardController' defined in file [C:\Users\bongo\git\ReBoard\ReBorad\bin\main\kr\co\green\board\controller\FreeBoardController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'freeBoardServiceImpl': Lookup method resolution failed
+[2025-04-11 13:33:26.285]  INFO 23764 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[2025-04-11 13:33:26.285]  INFO 23764 --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-107 - Shutdown initiated...
+[2025-04-11 13:33:26.287]  INFO 23764 --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-107 - Shutdown completed.
+[2025-04-11 13:33:26.287]  INFO 23764 --- [  restartedMain] o.a.c.c.StandardService                  : Stopping service [Tomcat]
+[2025-04-11 13:33:26.291]  INFO 23764 --- [  restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+[2025-04-11 13:33:26.293] ERROR 23764 --- [  restartedMain] o.s.b.SpringApplication                  : Application run failed
+
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'freeBoardController' defined in file [C:\Users\bongo\git\ReBoard\ReBorad\bin\main\kr\co\green\board\controller\FreeBoardController.class]: Unsatisfied dependency expressed through constructor parameter 0: Error creating bean with name 'freeBoardServiceImpl': Lookup method resolution failed
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:804) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:240) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1381) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1218) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1122) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1093) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1030) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.2.jar:6.2.2]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) [spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) [spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) [spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) [spring-boot-3.4.2.jar:3.4.2]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) [spring-boot-3.4.2.jar:3.4.2]
+	at kr.co.green.ReBoardApplication.main(ReBoardApplication.java:10) [main/:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[?:?]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) [spring-boot-devtools-3.4.1.jar:3.4.1]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'freeBoardServiceImpl': Lookup method resolution failed
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:498) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:368) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1320) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1215) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.2.jar:6.2.2]
+	... 26 more
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [kr.co.green.board.model.service.FreeBoardServiceImpl] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@3d80c067]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:483) ~[spring-core-6.2.2.jar:6.2.2]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:476) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:368) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1320) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1215) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.2.jar:6.2.2]
+	... 26 more
+Caused by: java.lang.NoClassDefFoundError: inst
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[?:?]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402) ~[?:?]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504) ~[?:?]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.2.2.jar:6.2.2]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:476) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:368) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1320) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1215) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.2.jar:6.2.2]
+	... 26 more
+Caused by: java.lang.ClassNotFoundException: inst
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[?:?]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[?:?]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[?:?]
+	at java.base/java.lang.Class.forName0(Native Method) ~[?:?]
+	at java.base/java.lang.Class.forName(Class.java:467) ~[?:?]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:121) ~[spring-boot-devtools-3.4.1.jar:3.4.1]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525) ~[?:?]
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[?:?]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3402) ~[?:?]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2504) ~[?:?]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:465) ~[spring-core-6.2.2.jar:6.2.2]
+	at org.springframework.util.ReflectionUtils.doWithLocalMethods(ReflectionUtils.java:320) ~[spring-core-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.checkLookupMethods(AutowiredAnnotationBeanPostProcessor.java:476) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.determineCandidateConstructors(AutowiredAnnotationBeanPostProcessor.java:368) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineConstructorsFromBeanPostProcessors(AbstractAutowireCapableBeanFactory.java:1320) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1215) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:563) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:523) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:336) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:307) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:334) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1631) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1519) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:913) ~[spring-beans-6.2.2.jar:6.2.2]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-6.2.2.jar:6.2.2]
+	... 26 more
+
+[2025-04-11 13:33:33.902]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : Starting ReBoardApplication using Java 17.0.12 with PID 23764 (C:\Users\bongo\git\ReBoard\ReBorad\bin\main started by bongo in C:\Users\bongo\git\ReBoard\ReBorad)
+[2025-04-11 13:33:33.903]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : No active profile set, falling back to 1 default profile: "default"
+[2025-04-11 13:33:34.048]  INFO 23764 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2025-04-11 13:33:34.072]  INFO 23764 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 2 JPA repository interfaces.
+[2025-04-11 13:33:34.136]  INFO 23764 --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 80 (http)
+[2025-04-11 13:33:34.137]  INFO 23764 --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-80"]
+[2025-04-11 13:33:34.137]  INFO 23764 --- [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+[2025-04-11 13:33:34.137]  INFO 23764 --- [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.34]
+[2025-04-11 13:33:34.156]  INFO 23764 --- [  restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+[2025-04-11 13:33:34.156]  INFO 23764 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 252 ms
+[2025-04-11 13:33:34.181]  INFO 23764 --- [  restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+[2025-04-11 13:33:34.183]  INFO 23764 --- [  restartedMain] o.h.c.i.RegionFactoryInitiator           : HHH000026: Second-level cache disabled
+[2025-04-11 13:33:34.188]  INFO 23764 --- [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+[2025-04-11 13:33:34.188]  INFO 23764 --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-108 - Starting...
+[2025-04-11 13:33:34.189]  WARN 23764 --- [  restartedMain] c.z.h.u.DriverDataSource                 : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[2025-04-11 13:33:34.291]  INFO 23764 --- [  restartedMain] c.z.h.p.HikariPool                       : HikariPool-108 - Added connection oracle.jdbc.driver.T4CConnection@3e5e61ea
+[2025-04-11 13:33:34.292]  INFO 23764 --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-108 - Start completed.
+[2025-04-11 13:33:34.295]  INFO 23764 --- [  restartedMain] o.h.o.c.pooling                          : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-108)']
+	Database driver: undefined/unknown
+	Database version: 21.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2025-04-11 13:33:34.323]  INFO 23764 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-04-11 13:33:34.324]  INFO 23764 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2025-04-11 13:33:34.386]  WARN 23764 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2025-04-11 13:33:34.390]  WARN 23764 --- [  restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 8ade0149-73a0-4e9b-a97a-f1a1db94aa9f
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2025-04-11 13:33:34.391]  INFO 23764 --- [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+[2025-04-11 13:33:34.486]  INFO 23764 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+[2025-04-11 13:33:34.492]  INFO 23764 --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-80"]
+[2025-04-11 13:33:34.495]  INFO 23764 --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 80 (http) with context path '/'
+[2025-04-11 13:33:34.498]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : Started ReBoardApplication in 0.623 seconds (process running for 13137.102)
+[2025-04-11 13:33:34.499]  INFO 23764 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+[2025-04-11 13:33:45.093]  INFO 23764 --- [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
+[2025-04-11 13:33:45.095]  INFO 23764 --- [     Thread-404] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
+[2025-04-11 13:33:45.096]  INFO 23764 --- [tomcat-shutdown] o.a.c.h.Http11NioProtocol                : Pausing ProtocolHandler ["http-nio-80"]
+[2025-04-11 13:33:45.869]  INFO 23764 --- [tomcat-shutdown] o.s.b.w.e.t.GracefulShutdown             : Graceful shutdown complete
+[2025-04-11 13:33:45.869]  INFO 23764 --- [     Thread-404] o.a.c.h.Http11NioProtocol                : Stopping ProtocolHandler ["http-nio-80"]
+[2025-04-11 13:33:45.871]  INFO 23764 --- [     Thread-404] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+[2025-04-11 13:33:45.871]  INFO 23764 --- [     Thread-404] c.z.h.HikariDataSource                   : HikariPool-108 - Shutdown initiated...
+[2025-04-11 13:33:45.880]  INFO 23764 --- [     Thread-404] c.z.h.HikariDataSource                   : HikariPool-108 - Shutdown completed.
+[2025-04-11 13:33:45.956]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : Starting ReBoardApplication using Java 17.0.12 with PID 23764 (C:\Users\bongo\git\ReBoard\ReBorad\bin\main started by bongo in C:\Users\bongo\git\ReBoard\ReBorad)
+[2025-04-11 13:33:45.957]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : No active profile set, falling back to 1 default profile: "default"
+[2025-04-11 13:33:46.104]  INFO 23764 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+[2025-04-11 13:33:46.129]  INFO 23764 --- [  restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 2 JPA repository interfaces.
+[2025-04-11 13:33:46.194]  INFO 23764 --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat initialized with port 80 (http)
+[2025-04-11 13:33:46.195]  INFO 23764 --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Initializing ProtocolHandler ["http-nio-80"]
+[2025-04-11 13:33:46.195]  INFO 23764 --- [  restartedMain] o.a.c.c.StandardService                  : Starting service [Tomcat]
+[2025-04-11 13:33:46.195]  INFO 23764 --- [  restartedMain] o.a.c.c.StandardEngine                   : Starting Servlet engine: [Apache Tomcat/10.1.34]
+[2025-04-11 13:33:46.214]  INFO 23764 --- [  restartedMain] o.a.c.c.C.[.[.[/]                        : Initializing Spring embedded WebApplicationContext
+[2025-04-11 13:33:46.214]  INFO 23764 --- [  restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 256 ms
+[2025-04-11 13:33:46.242]  INFO 23764 --- [  restartedMain] o.h.j.i.u.LogHelper                      : HHH000204: Processing PersistenceUnitInfo [name: default]
+[2025-04-11 13:33:46.244]  INFO 23764 --- [  restartedMain] o.h.c.i.RegionFactoryInitiator           : HHH000026: Second-level cache disabled
+[2025-04-11 13:33:46.249]  INFO 23764 --- [  restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+[2025-04-11 13:33:46.249]  INFO 23764 --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-109 - Starting...
+[2025-04-11 13:33:46.250]  WARN 23764 --- [  restartedMain] c.z.h.u.DriverDataSource                 : Registered driver with driverClassName=oracle.jdbc.driver.OracleDriver was not found, trying direct instantiation.
+[2025-04-11 13:33:46.341]  INFO 23764 --- [  restartedMain] c.z.h.p.HikariPool                       : HikariPool-109 - Added connection oracle.jdbc.driver.T4CConnection@51df44a3
+[2025-04-11 13:33:46.342]  INFO 23764 --- [  restartedMain] c.z.h.HikariDataSource                   : HikariPool-109 - Start completed.
+[2025-04-11 13:33:46.345]  INFO 23764 --- [  restartedMain] o.h.o.c.pooling                          : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-109)']
+	Database driver: undefined/unknown
+	Database version: 21.3
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+[2025-04-11 13:33:46.375]  INFO 23764 --- [  restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+[2025-04-11 13:33:46.375]  INFO 23764 --- [  restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+[2025-04-11 13:33:46.420]  WARN 23764 --- [  restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+[2025-04-11 13:33:46.424]  WARN 23764 --- [  restartedMain] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 6d70b2d0-0f0f-4f79-85b0-bc3739a3a754
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+[2025-04-11 13:33:46.425]  INFO 23764 --- [  restartedMain] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+[2025-04-11 13:33:46.500]  INFO 23764 --- [  restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+[2025-04-11 13:33:46.505]  INFO 23764 --- [  restartedMain] o.a.c.h.Http11NioProtocol                : Starting ProtocolHandler ["http-nio-80"]
+[2025-04-11 13:33:46.508]  INFO 23764 --- [  restartedMain] o.s.b.w.e.t.TomcatWebServer              : Tomcat started on port 80 (http) with context path '/'
+[2025-04-11 13:33:46.512]  INFO 23764 --- [  restartedMain] k.c.g.ReBoardApplication                 : Started ReBoardApplication in 0.583 seconds (process running for 13149.115)
+[2025-04-11 13:33:46.513]  INFO 23764 --- [  restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
