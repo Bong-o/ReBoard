@@ -25,7 +25,7 @@ public class BoardEntity {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long no;
 
     @Column(nullable = false, length = 200)
     private String title;
@@ -48,8 +48,8 @@ public class BoardEntity {
     private MemberEntity author;
     
     @Builder
-    public BoardEntity(Long id, String title, String content, MemberEntity author, LocalDateTime createdAt, LocalDateTime updatedAt) {
-        this.id = id;
+    public BoardEntity(Long no, String title, String content, MemberEntity author, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.no = no;
         this.title = title;
         this.content = content;
         this.author = author;

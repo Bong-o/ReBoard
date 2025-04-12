@@ -1,10 +1,9 @@
 package kr.co.green.board.controller;
 
-import java.util.List;
-
-
-import java.util.Map;
-
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,8 +17,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import kr.co.green.board.model.dto.BoardDTO;
 import kr.co.green.board.model.dto.FileDTO;
-import kr.co.green.board.model.dto.PageInfoDTO;
-import kr.co.green.board.model.dto.SearchDTO;
 import kr.co.green.board.model.service.BoardService;
 import kr.co.green.board.util.Pagination;
 
@@ -34,14 +31,33 @@ public class FreeBoardController {
 		this.boardService = boardService;
 		this.pagination = pagination;
 	}
+	/**
+	 *  Pageable	DB 쿼리용 페이징 설정 (page, size, sort)
+		Page<>	쿼리 결과와 메타 정보 (totalPages 등)
+		PaginationInfo	뷰에 넘기기 위한 페이지 버튼 정보
+		PaginationUtils	위 정보를 계산해주는 유틸리티
+	 */
 
 	@GetMapping("/list")
-	public String list(Model model) {
-	    List<BoardResDto> boardList = boardService.getBoardList();
+	public String list(@RequestParam(name = "page", defaultValue = "1") int page,
+            	       @RequestParam(name = "size", defaultValue = "10") int size,
+            	       Model model) {
+		
+		Pageable pageable = PageRequest.of(page - 1, size, Sort.by("no").descending());
+		Page<BoardResDto> boardPage = boardService.getBoards(pageable);
+		
+		PaginationInfo paginationInfo = PaginationUtils.getPaginationInfo(boardPage);
 	    
-	    model.addAttribute("boards", boardList);
-
-	    return "/board/free/list";
+		model.addAttribute("boards", boardPage.getContent());
+		model.addAttribute("page", boardPage);
+		model.addAttribute("pagination", paginationInfo);
+		
+		return "/board/free/list";
+//	    List<BoardResDto> boardList = boardService.getBoardList();
+//	    
+//	    model.addAttribute("boards", boardList);
+//
+//	    return "/board/free/list";
 	}
 	
 //	// 요청 URL : //board/free/list?currentPage=3
@@ -90,14 +106,11 @@ public class FreeBoardController {
 	}
 	
 	@GetMapping("detail")
-	public String detail(@RequestParam(value="no") int no,
-					     Model model) {
-		// 선택한 게시글에 대한 정보를 불러와야 함
-		// 제목, 내용, 작성자, 작성일, 조회수
+	public String detail(@RequestParam(value="no") Long no, Model model) {
 		
-		BoardDTO result = boardService.detail(no);
+		BoardResDto board = boardService.detail(no);
 		
-		model.addAttribute("post", result);
+		model.addAttribute("board", board);
 		
 		return "/board/free/detail";
 	}

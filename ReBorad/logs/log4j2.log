@@ -1,3 +1,1 @@
-[2025-04-11 14:52:10.257]  INFO 36336 --- [p-nio-80-exec-1] o.a.c.c.C.[.[.[/]                        : Initializing Spring DispatcherServlet 'dispatcherServlet'
-[2025-04-11 14:52:10.260]  INFO 36336 --- [p-nio-80-exec-1] o.s.w.s.DispatcherServlet                : Initializing Servlet 'dispatcherServlet'
-[2025-04-11 14:52:10.261]  INFO 36336 --- [p-nio-80-exec-1] o.s.w.s.DispatcherServlet                : Completed initialization in 1 ms
+[2025-04-13 01:00:00.496]  WARN 92220 --- [-29 housekeeper] c.z.h.p.HikariPool                       : HikariPool-29 - Thread starvation or clock leap detected (housekeeper delta=40m1s614ms527µs).

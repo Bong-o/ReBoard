@@ -1,3 +1,0 @@
-[2025-04-11 10:38:59.779]  INFO 23764 --- [   File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 0 deletions, 1 modification)
-[2025-04-11 10:38:59.782]  INFO 23764 --- [      Thread-58] o.s.b.w.e.t.GracefulShutdown             : Commencing graceful shutdown. Waiting for active requests to complete
-[2025-04-11 10:38:59.783]  INFO 23764 --- [tomcat-shutdown] o.a.c.h.Http11NioProtocol                : Pausing ProtocolHandler ["http-nio-80"]

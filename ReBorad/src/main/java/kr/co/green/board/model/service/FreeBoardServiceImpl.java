@@ -1,18 +1,17 @@
 package kr.co.green.board.model.service;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import kr.co.green.board.controller.BoardResDto;
+import kr.co.green.board.entity.BoardEntity;
+import kr.co.green.board.exception.BoardException;
 import kr.co.green.board.model.dto.BoardDTO;
-import kr.co.green.board.model.dto.PageInfoDTO;
-import kr.co.green.board.model.dto.SearchDTO;
 import kr.co.green.board.model.mapper.BoardMapper;
 import kr.co.green.board.model.mapper.BoardRepository;
 import kr.co.green.board.util.FileUpload;
@@ -29,12 +28,56 @@ public  class FreeBoardServiceImpl implements BoardService {
 		this.boardRepository = boardRepository;
 	}
 	
-	@Override
-	public List<BoardResDto> getBoardList() {
-        return boardRepository.findAllByOrderByIdDesc().stream()
-                .map(BoardResDto::new)
-                .collect(Collectors.toList());
+//	@Override
+//	public List<BoardResDto> getBoardList() {
+//        return boardRepository.findAllByOrderByIdDesc().stream()
+//                .map(BoardResDto::new)
+//                .collect(Collectors.toList());
+//    }
+	
+	public Page<BoardResDto> getBoards(Pageable pageable) {
+		 Page<BoardEntity> entityPage = boardRepository.findAll(pageable);
+		    return entityPage.map(BoardResDto::new); // 각각의 엔티티를 DTO로 변환
     }
+
+    // 검색 기능 추가 버전
+//    public Page<BoardEntity> searchBoards(String keyword, Pageable pageable) {
+//        return boardRepository.findByTitleContaining(keyword, pageable);
+//    }
+	
+	
+	@Override
+	public int enroll(BoardDTO boardDTO, MultipartFile file) {
+		
+		int result = 0;
+		
+		result = boardMapper.enroll(boardDTO);
+		
+		if(result == 1 && file != null && !file.isEmpty()) {
+			try {
+				fu.uploadFile(file, boardDTO.getFileDTO(), "free");
+				boardMapper.enrollFile(boardDTO);
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
+		return result;
+	}
+	
+	@Override
+	public BoardResDto detail(Long no) {
+		
+		BoardEntity board = boardRepository.findById(no)
+			    .orElseThrow(() -> new BoardException(no + "번 게시글이 존재하지 않습니다.", "/error/boardError", HttpStatus.BAD_GATEWAY));
+		
+		return new BoardResDto(board);
+	}
+	
+	
+	
+	
 	
 	
 //	@Override
@@ -65,52 +108,6 @@ public  class FreeBoardServiceImpl implements BoardService {
 //		return boardMapper.getTotalCount(searchDTO);
 //	}
 //	
-	@Override
-	public int enroll(BoardDTO boardDTO, MultipartFile file) {
-		
-		int result = 0;
-		
-		result = boardMapper.enroll(boardDTO);
-		
-		if(result == 1 && file != null && !file.isEmpty()) {
-			try {
-				fu.uploadFile(file, boardDTO.getFileDTO(), "free");
-				boardMapper.enrollFile(boardDTO);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		}
-		
-		
-		return result;
-	}
-	
-	@Override
-	public BoardDTO detail(int no) {
-		// 조회수 1 증가
-		int addViewCount = boardMapper.addViewCount(no);
-		
-		if(addViewCount == 1) {
-			// no가지고 file 테이블에 데이터가 있는지
-			// 데이터가 있으면 boardDTO.fileDTO에 넣고
-			BoardDTO fileCheck = boardMapper.getFileInfo(no);
-			BoardDTO result;
-			
-			if(fileCheck != null) {
-				fileCheck.setNo(no);
-				result = boardMapper.detailFile(fileCheck);
-				result.setFileDTO(fileCheck.getFileDTO());
-			} else {
-				result = boardMapper.detail(no);
-			}
-			
-			// free_board 테이블 다시 SELECT해서 제목, 내용 가져오기
-			return result;
-		} else {
-			return null;
-		}
-	}
-	
 	@Override
 	public BoardDTO updateForm(int no) {
 		return boardMapper.updateForm(no);

@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
+import kr.co.green.board.exception.BoardException;
 import kr.co.green.member.exception.MemberException;
 
 @ControllerAdvice
@@ -16,6 +17,14 @@ public class GlobalExceptionHandler {
 		model.addAttribute("message", me.getMessage());
 		
 		return me.getPath();
+	}
+	
+	@ExceptionHandler(BoardException.class)
+	public String handleBoardException(BoardException be, Model model) {
+		
+		model.addAttribute("message", be.getMessage());
+		
+		return be.getPath();
 	}
 	
 	@ExceptionHandler(Exception.class)

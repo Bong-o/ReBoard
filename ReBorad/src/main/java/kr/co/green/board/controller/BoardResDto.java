@@ -8,15 +8,17 @@ import lombok.Getter;
 @Getter
 public class BoardResDto {
 	
-	private Long id;
+	private Long no;
 	private String title;
+	private String content;
 	private String authorName;
 	private String createdAt;
 	private int views;
 	
 	public BoardResDto(BoardEntity entity) {
-		this.id = entity.getId();
+		this.no = entity.getNo();
 	    this.title = entity.getTitle();
+	    this.content = entity.getContent();
 	    this.authorName = entity.getAuthor().getUsername();
 	    this.views = entity.getViews();
 	    
