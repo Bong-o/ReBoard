@@ -7,9 +7,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.multipart.MultipartFile;
 
-import kr.co.green.board.controller.BoardResDto;
-import kr.co.green.board.entity.BoardEntity;
 import kr.co.green.board.model.dto.BoardDTO;
+import kr.co.green.board.model.dto.BoardReqDto;
+import kr.co.green.board.model.dto.BoardResDto;
 
 public interface BoardService {
 	
@@ -19,7 +19,17 @@ public interface BoardService {
 	
 	public BoardResDto detail(Long no);
 	
+	public void enroll(BoardReqDto boardReqDto);
 	
+	public BoardResDto updateForm(Long no);
+	
+	public void update(BoardReqDto boardReqDto);
+	
+	
+	
+	
+	
+	//public int enroll(BoardDTO boardDTO, MultipartFile file);
 	
 //	public Map<String, Object> getAllPosts(TestPagination pagination,
 //										   int currentPage, 
@@ -28,8 +38,6 @@ public interface BoardService {
 //										   int boardLimit,
 //										   SearchDTO searchDTO);
 //	public int getTotalCount(SearchDTO searchDTO); // 전체 게시글 수
-	public int enroll(BoardDTO boardDTO, MultipartFile file);
-	public BoardDTO updateForm(int no);
-	public int update(BoardDTO boardDTO, int memberNo, MultipartFile file);
+	//public int update(BoardDTO boardDTO, int memberNo, MultipartFile file);
 	public int delete(int no, int memberNo, String fileName);
 }

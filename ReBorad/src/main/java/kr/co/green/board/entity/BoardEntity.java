@@ -56,5 +56,11 @@ public class BoardEntity {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
+    
+    public void update(String title, String content, LocalDateTime updatedAt) {
+    	this.title = title;
+    	this.content = content;
+    	this.updatedAt = updatedAt;
+    }
 
 }

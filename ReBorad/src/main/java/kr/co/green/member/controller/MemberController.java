@@ -66,7 +66,7 @@ public class MemberController {
 			Cookie accessCookie = new Cookie("access_token", accessToken);
 			accessCookie.setHttpOnly(true); // JS에서 접근 못하게
 			accessCookie.setPath("/"); // 전체 경로에 적용
-			accessCookie.setMaxAge(60 * 15); // 15분
+			accessCookie.setMaxAge(60 * 60); // 15분
 			
 			Cookie refreshCookie = new Cookie("refresh_token", refreshToken);
 	        refreshCookie.setHttpOnly(true);

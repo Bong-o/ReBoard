@@ -1,4 +1,4 @@
-package kr.co.green.board.controller;
+package kr.co.green.board.model.dto;
 
 import java.time.format.DateTimeFormatter;
 
@@ -14,7 +14,7 @@ public class BoardResDto {
 	private String authorName;
 	private String createdAt;
 	private int views;
-	
+
 	public BoardResDto(BoardEntity entity) {
 		this.no = entity.getNo();
 	    this.title = entity.getTitle();
@@ -24,7 +24,6 @@ public class BoardResDto {
 	    
 	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM-dd HH:mm");
 	    this.createdAt = entity.getCreatedAt().format(formatter);
-
 	}
 	
 }

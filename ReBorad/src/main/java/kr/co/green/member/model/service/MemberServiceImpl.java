@@ -61,7 +61,7 @@ public class MemberServiceImpl implements MemberService {
 			throw new MemberException("비밀번호가 일치하지 않습니다.", "/member/signin", HttpStatus.BAD_REQUEST);
 		}
 		
-		return new SigninResDto(member.getId());
+		return new SigninResDto(member.getId(), member.getUsername());
 	}	
 	
 }
