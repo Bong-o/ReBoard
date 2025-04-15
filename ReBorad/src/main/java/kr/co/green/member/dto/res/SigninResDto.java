@@ -1,4 +1,4 @@
-package kr.co.green.member.model.dto;
+package kr.co.green.member.dto.res;
 
 import kr.co.green.member.entity.MemberEntity;
 import lombok.AllArgsConstructor;

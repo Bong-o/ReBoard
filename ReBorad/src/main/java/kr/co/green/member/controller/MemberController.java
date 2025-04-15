@@ -15,10 +15,10 @@ import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import kr.co.green.jwt.JwtUtil;
-import kr.co.green.member.model.dto.SigninReqDto;
-import kr.co.green.member.model.dto.SigninResDto;
-import kr.co.green.member.model.dto.SignupReqDto;
-import kr.co.green.member.model.service.MemberServiceImpl;
+import kr.co.green.member.dto.req.SigninReqDto;
+import kr.co.green.member.dto.req.SignupReqDto;
+import kr.co.green.member.dto.res.SigninResDto;
+import kr.co.green.member.service.MemberServiceImpl;
 import lombok.RequiredArgsConstructor;
 
 @Controller

@@ -5,25 +5,22 @@
 	<header th:replace="~{fragments/common/header :: HeaderFragment}"></header>
 	<nav th:replace="~{fragments/common/nav :: NavFragment}"></nav>
 
-  <section id="contact">
-    <h2>연락하기</h2>
-    <p>문의사항이나 연락하고 싶은 내용을 작성하세요.</p>
-    <form th:action="@{/contact/enroll}" method="post">
-        <label for="name">이름:</label>
-        <input type="text" id="name" name="name" required>
-        
-        <label for="email">이메일:</label>
-        <input type="email" id="email" name="email" required>
-        
-        <label for="message">메시지:</label>
-        <textarea id="message" name="content" rows="4" required></textarea>
+	<section id="contact">
+		<h2>연락하기</h2>
+		<p>문의사항이나 연락하고 싶은 내용을 작성하세요.</p>
+		<form th:action="@{/contact/enroll}" method="post">
+			<label for="name">이름:</label> <input type="text" id="name"
+				name="name" required> <label for="email">이메일:</label> <input
+				type="email" id="email" name="email" required> <label
+				for="message">메시지:</label>
+			<textarea id="message" name="content" rows="4" required></textarea>
 
-        <p id="charCounter">0/500</p>
+			<p id="charCounter">0/500</p>
 
-        <button type="submit">전송</button>
-    </form>
-  </section>
-  <script>
+			<button type="submit">전송</button>
+		</form>
+	</section>
+	<script>
     const messageInput = document.getElementById("message");
     const charCounter = document.getElementById("charCounter");
 
@@ -42,7 +39,8 @@
             charCounter.classList.remove("exceeded");  // 500자 이내면 경고 제거
         }
     });
-</script>
-  <footer th:replace="~{fragments/common/footer :: FooterFragment}"></footer>
+	</script>
+
+	<footer th:replace="~{fragments/common/footer :: FooterFragment}"></footer>
 </body>
 </html>

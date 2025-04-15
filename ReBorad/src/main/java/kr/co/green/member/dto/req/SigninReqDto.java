@@ -1,4 +1,4 @@
-package kr.co.green.member.model.dto;
+package kr.co.green.member.dto.req;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

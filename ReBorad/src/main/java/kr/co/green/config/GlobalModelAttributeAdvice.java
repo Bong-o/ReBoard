@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import kr.co.green.jwt.JwtUtil;
+import kr.co.green.member.dto.res.SigninResDto;
 import kr.co.green.member.entity.MemberEntity;
-import kr.co.green.member.model.dto.SigninResDto;
-import kr.co.green.member.model.mapper.MemberRepository;
+import kr.co.green.member.repository.MemberRepository;
 
 @Component
 @ControllerAdvice

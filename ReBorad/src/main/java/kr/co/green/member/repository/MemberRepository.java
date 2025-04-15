@@ -1,4 +1,4 @@
-package kr.co.green.member.model.mapper;
+package kr.co.green.member.repository;
 
 import java.util.Optional;
 

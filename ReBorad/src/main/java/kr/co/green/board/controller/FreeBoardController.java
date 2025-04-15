@@ -1,5 +1,7 @@
 package kr.co.green.board.controller;
 
+import java.util.List;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -19,6 +21,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import kr.co.green.board.model.dto.BoardDTO;
 import kr.co.green.board.model.dto.BoardReqDto;
 import kr.co.green.board.model.dto.BoardResDto;
+import kr.co.green.board.model.dto.CommentResDto;
 import kr.co.green.board.model.service.BoardService;
 import kr.co.green.board.util.Pagination;
 import kr.co.green.jwt.JwtUtil;
@@ -92,9 +95,17 @@ public class FreeBoardController {
 	@GetMapping("detail")
 	public String detail(@RequestParam(value="no") Long no, Model model) {
 		
-		BoardResDto board = boardService.detail(no);
+		BoardResDto boards = boardService.detail(no);
+		List<CommentResDto> comments = boardService.comment(no);
 		
-		model.addAttribute("board", board);
+		for(CommentResDto comment : comments) {
+			System.out.println(comment.getAuthor());
+			System.out.println(comment.getContent());
+			System.out.println(comment.getCreatedAt());
+		}
+		
+		model.addAttribute("board", boards);
+		model.addAttribute("comments", comments);
 		
 		return "/board/free/detail";
 	}
@@ -119,11 +130,9 @@ public class FreeBoardController {
 	
 			
 	@PostMapping("/delete")
-	public String delete(@RequestParam(value="no") int no,
-						 @RequestParam(value="fileName", defaultValue="none") String fileName,
-					     @SessionAttribute("memberNo") int memberNo) {
+	public String delete(@RequestParam(value="no") Long no) {
 		
-		int result = boardService.delete(no, memberNo, fileName);
+		boardService.delete(no);
 		
 		return "redirect:/board/free/list";
 	}
@@ -204,3 +213,12 @@ public class FreeBoardController {
 //		
 //		return "redirect:/board/free/list";
 //	}
+//@PostMapping("/delete")
+//public String delete(@RequestParam(value="no") int no,
+//		@RequestParam(value="fileName", defaultValue="none") String fileName,
+//		@SessionAttribute("memberNo") int memberNo) {
+//	
+//	int result = boardService.delete(no, memberNo, fileName);
+//	
+//	return "redirect:/board/free/list";
+//}

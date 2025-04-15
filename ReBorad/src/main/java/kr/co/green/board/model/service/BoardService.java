@@ -10,6 +10,7 @@ import org.springframework.web.multipart.MultipartFile;
 import kr.co.green.board.model.dto.BoardDTO;
 import kr.co.green.board.model.dto.BoardReqDto;
 import kr.co.green.board.model.dto.BoardResDto;
+import kr.co.green.board.model.dto.CommentResDto;
 
 public interface BoardService {
 	
@@ -25,9 +26,9 @@ public interface BoardService {
 	
 	public void update(BoardReqDto boardReqDto);
 	
+	public void delete(Long no);
 	
-	
-	
+	public List<CommentResDto> comment(Long no);
 	
 	//public int enroll(BoardDTO boardDTO, MultipartFile file);
 	
@@ -39,5 +40,4 @@ public interface BoardService {
 //										   SearchDTO searchDTO);
 //	public int getTotalCount(SearchDTO searchDTO); // 전체 게시글 수
 	//public int update(BoardDTO boardDTO, int memberNo, MultipartFile file);
-	public int delete(int no, int memberNo, String fileName);
 }

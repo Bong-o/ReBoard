@@ -1,7 +1,8 @@
 package kr.co.green.board.model.service;
 
-import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -10,25 +11,31 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import kr.co.green.board.entity.BoardEntity;
+import kr.co.green.board.entity.CommentEntity;
 import kr.co.green.board.exception.BoardException;
-import kr.co.green.board.model.dto.BoardDTO;
 import kr.co.green.board.model.dto.BoardReqDto;
 import kr.co.green.board.model.dto.BoardResDto;
+import kr.co.green.board.model.dto.CommentResDto;
 import kr.co.green.board.model.mapper.BoardMapper;
 import kr.co.green.board.model.mapper.BoardRepository;
+import kr.co.green.board.model.mapper.CommentRepository;
 import kr.co.green.board.util.FileUpload;
 import kr.co.green.member.entity.MemberEntity;
 
 @Service	
 public  class FreeBoardServiceImpl implements BoardService {
 	private final BoardRepository boardRepository;
+	private final CommentRepository commentRepository;
 	private final BoardMapper boardMapper;
 	private final FileUpload fu;
 	
-	public FreeBoardServiceImpl(BoardMapper boardmapper, FileUpload fu, BoardRepository boardRepository) {
+	public FreeBoardServiceImpl(BoardMapper boardmapper, FileUpload fu, 
+								BoardRepository boardRepository,
+								CommentRepository commentRepository) {
 		this.boardMapper = boardmapper;
 		this.fu = fu;
 		this.boardRepository = boardRepository;
+		this.commentRepository = commentRepository;
 	}
 	
 //	@Override
@@ -70,8 +77,20 @@ public  class FreeBoardServiceImpl implements BoardService {
 		BoardEntity board = boardRepository.findById(no)
 			    .orElseThrow(() -> new BoardException(no + "번 게시글이 존재하지 않습니다.", "/error/boardError", HttpStatus.BAD_GATEWAY));
 		
-		
 		return new BoardResDto(board);
+	}
+	
+	@Override
+	public List<CommentResDto> comment(Long no) {
+		
+	    List<CommentEntity> comments = commentRepository.findByPostNo(no);
+	    
+	    return comments.stream()
+	        .map(comment -> new CommentResDto(
+	            comment.getContent(),
+	            comment.getAuthor().getId(),
+	            comment.getCreatedAt()))
+	        .collect(Collectors.toList());
 	}
 	
 	@Override
@@ -94,26 +113,15 @@ public  class FreeBoardServiceImpl implements BoardService {
 	}
 	
 	@Override
-	public int delete(int no, int memberNo, String fileName) {
-		int requestAuthorNo = boardMapper.getAuthorNo(no);
+	@Transactional
+	public void delete(Long no) {
 		
-		if(requestAuthorNo == memberNo) {
-			// 1. 서버에 저장된 파일 삭제
-			BoardDTO boardDTO = new BoardDTO();
-			
-			try {
-				fu.deleteFile(boardDTO.getFileDTO().getLOCAL_PATH(), "free", fileName);
-				boardMapper.deleteFile(fileName);
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-			
-			// 2. DB 파일 테이블에서 삭제
-			int result = boardMapper.delete(no);
-			return result;
-		}
-		return 0;
+		BoardEntity board = boardRepository.findById(no)
+		        .orElseThrow(() -> new BoardException("게시글이 존재하지 않습니다.", "/error/boardError", HttpStatus.NOT_FOUND));
+		    
+		boardRepository.delete(board);
 	}
+		
 
 
 }
@@ -199,3 +207,24 @@ public  class FreeBoardServiceImpl implements BoardService {
 //	public int getTotalCount(SearchDTO searchDTO) {
 //		return boardMapper.getTotalCount(searchDTO);
 //	}
+//@Override
+//public int delete(int no, int memberNo, String fileName) {
+//	int requestAuthorNo = boardMapper.getAuthorNo(no);
+//	
+//	if(requestAuthorNo == memberNo) {
+//		// 1. 서버에 저장된 파일 삭제
+//		BoardDTO boardDTO = new BoardDTO();
+//		
+//		try {
+//			fu.deleteFile(boardDTO.getFileDTO().getLOCAL_PATH(), "free", fileName);
+//			boardMapper.deleteFile(fileName);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+//		
+//		// 2. DB 파일 테이블에서 삭제
+//		int result = boardMapper.delete(no);
+//		return result;
+//	}
+//	return 0;
+//}

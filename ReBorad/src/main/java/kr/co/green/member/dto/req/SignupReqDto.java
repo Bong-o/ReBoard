@@ -1,5 +1,5 @@
 
-package kr.co.green.member.model.dto;
+package kr.co.green.member.dto.req;
 
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
