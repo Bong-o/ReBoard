@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="~{fragments/common/head :: HeadFragment}"></head>
+<body>
+	<header th:replace="~{fragments/common/header :: HeaderFragment}"></header>
+	<nav th:replace="~{fragments/common/nav :: NavFragment}"></nav>
+
+	<div id="user-info" th:data-name="${memberName}" style="display: none;"></div>
+	<div id="chat-container">
+		<!-- 채팅방 목록 -->
+		<div id="chat-room-list">
+			<h3>채팅방</h3>
+			<ul>
+				<li onclick="enterRoom('room1')">방 1</li>
+				<li onclick="enterRoom('room2')">방 2</li>
+				<li onclick="enterRoom('room3')">방 3</li>
+			</ul>
+		</div>
+
+		<!-- 채팅창 -->
+		<div id="chat-window">
+			<div id="chat-title">채팅방을 선택하세요</div>
+			<div id="message-container">
+				<!-- 메시지가 여기에 출력됨 -->
+			</div>
+			<div id="input-form">
+				<input type="text" id="message-input" placeholder="메시지 입력..." />
+				<button id="send-btn" onclick="sendMessage()">전송</button>
+			</div>
+		</div>
+	</div>
+
+	<footer th:replace="~{fragments/common/footer :: FooterFragment}"></footer>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+		crossorigin="anonymous"></script>
+	<script src="/js/contact/chat.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/sockjs-client@1.6.1/dist/sockjs.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/stompjs@2.3.3/lib/stomp.min.js"></script>
+</body>
+</html>

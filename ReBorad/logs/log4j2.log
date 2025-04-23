@@ -1,1 +1,4 @@
-[2025-04-15 19:32:42.796]  WARN 244368 --- [-20 housekeeper] c.z.h.p.HikariPool                       : HikariPool-20 - Thread starvation or clock leap detected (housekeeper delta=2h46m34s625ms90µs500ns).
+[2025-04-24 00:47:16.690]  WARN 361612 --- [p-nio-80-exec-3] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-04-24 00:47:16.797]  WARN 361612 --- [p-nio-80-exec-2] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-04-24 00:47:16.936]  WARN 361612 --- [p-nio-80-exec-7] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
+[2025-04-24 00:47:17.113]  WARN 361612 --- [p-nio-80-exec-8] .m.m.a.ExceptionHandlerExceptionResolver : Resolved [org.springframework.web.servlet.resource.NoResourceFoundException: No static resource favicon.ico.]
