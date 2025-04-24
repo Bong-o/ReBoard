@@ -5,15 +5,16 @@
 	<header th:replace="~{fragments/common/header :: HeaderFragment}"></header>
 	<nav th:replace="~{fragments/common/nav :: NavFragment}"></nav>
 
-	<div id="user-info" th:data-name="${memberName}" style="display: none;"></div>
+	<!-- <div id="user-infoName" th:data-name="${memberName}" style="display: none;"></div> -->
+	<div id="user-infoId" th:data-name="${memberId}" style="display: none;"></div>
 	<div id="chat-container">
 		<!-- 채팅방 목록 -->
 		<div id="chat-room-list">
 			<h3>채팅방</h3>
 			<ul>
 				<li onclick="enterRoom('room1')">방 1</li>
-				<li onclick="enterRoom('room2')">방 2</li>
-				<li onclick="enterRoom('room3')">방 3</li>
+				<!-- <li onclick="enterRoom('room2')">방 2</li>
+				<li onclick="enterRoom('room3')">방 3</li> -->
 			</ul>
 		</div>
 

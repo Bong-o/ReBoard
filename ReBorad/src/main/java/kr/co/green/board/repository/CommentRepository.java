@@ -1,4 +1,4 @@
-package kr.co.green.board.model.mapper;
+package kr.co.green.board.repository;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package kr.co.green.contact.model.service;
+package kr.co.green.contact.service;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -26,16 +26,25 @@ public class ChatServiceImpl implements ChatService {
     private final MemberRepository memeberRepository;
     // 메시지 전송 및 저장
     public void sendMessage(ChatMessage messageDto) {
-    	ChatMessageEntity message = new ChatMessageEntity();
-    	message.setChatRoom(chatRoomRepository.findById(messageDto.getRoomId()).orElseThrow());
-    	message.setSender(memeberRepository.findById(messageDto.getSender()).orElseThrow());
-        message.setContent(messageDto.getContent());
-        message.setCreatedAt(LocalDateTime.now());
-
-        chatMessageRepository.save(message);
+    	
+    	if ("ENTER".equals(messageDto.getType())) {
+            messageDto.setContent(messageDto.getSender() + "님이 입장했습니다.");
+        } else if ("EXIT".equals(messageDto.getType())) {
+            messageDto.setContent(messageDto.getSender() + "님이 퇴장했습니다.");
+        }
+    	
+    	if ("TALK".equals(messageDto.getType())) {
+    		ChatMessageEntity message = new ChatMessageEntity();
+    		message.setChatRoom(chatRoomRepository.findById(messageDto.getRoomId()).orElseThrow());
+    		message.setSender(memeberRepository.findById(messageDto.getSender()).orElseThrow());
+    		message.setContent(messageDto.getContent());
+    		message.setCreatedAt(LocalDateTime.now());
+    		
+    		chatMessageRepository.save(message);
+    	}
 
         // WebSocket을 통해 메시지 전송
-        messagingTemplate.convertAndSend("/topic/chatroom." + message.getChatRoom(), messageDto);
+        messagingTemplate.convertAndSend("/topic/chatroom." + messageDto.getRoomId(), messageDto);
     }
 
     // 채팅방의 메시지 목록 조회

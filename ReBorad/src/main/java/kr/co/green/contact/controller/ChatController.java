@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import kr.co.green.contact.entity.ChatMessageEntity;
 import kr.co.green.contact.entity.ChatRoomEntity;
 import kr.co.green.contact.model.dto.ChatMessage;
-import kr.co.green.contact.model.service.ChatService;
+import kr.co.green.contact.service.ChatService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -23,25 +23,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ChatController {
 	
-//	private final SimpMessagingTemplate messagingTemplate;
-//	
-//	public ChatController(SimpMessagingTemplate messagingTemplate) {
-//        this.messagingTemplate = messagingTemplate;
-//    }
-//
-//	// 클라이언트가 /app/chat으로 메시지를 보내면
-//	@MessageMapping("/chat.sendMessage")
-//	public void sendMessage(@Payload ChatMessage message) {
-//		messagingTemplate.convertAndSend("/topic/chatroom." + message.getRoomId(), message);
-//	}
-//
-//	// 해당 메시지를 /topic/messages로 구독중인 클라이언트에게 전송
-//	@SendTo("/topic/messages")
-//	public ChatMessage send(ChatMessage message) {
-//		return message; // 그대로 전달
-//	}
-	
-	 private final ChatService chatService;
+	private final ChatService chatService;
 
     // 메시지 전송 (WebSocket)
     @MessageMapping("/chat.sendMessage")

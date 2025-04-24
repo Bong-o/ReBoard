@@ -1,6 +1,7 @@
 package kr.co.green.board.model.service;
 
 import java.time.LocalDateTime;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -16,9 +17,8 @@ import kr.co.green.board.exception.BoardException;
 import kr.co.green.board.model.dto.BoardReqDto;
 import kr.co.green.board.model.dto.BoardResDto;
 import kr.co.green.board.model.dto.CommentResDto;
-import kr.co.green.board.model.mapper.BoardMapper;
-import kr.co.green.board.model.mapper.BoardRepository;
-import kr.co.green.board.model.mapper.CommentRepository;
+import kr.co.green.board.repository.BoardRepository;
+import kr.co.green.board.repository.CommentRepository;
 import kr.co.green.board.util.FileUpload;
 import kr.co.green.member.entity.MemberEntity;
 
@@ -26,13 +26,11 @@ import kr.co.green.member.entity.MemberEntity;
 public  class FreeBoardServiceImpl implements BoardService {
 	private final BoardRepository boardRepository;
 	private final CommentRepository commentRepository;
-	private final BoardMapper boardMapper;
 	private final FileUpload fu;
 	
-	public FreeBoardServiceImpl(BoardMapper boardmapper, FileUpload fu, 
+	public FreeBoardServiceImpl(FileUpload fu, 
 								BoardRepository boardRepository,
 								CommentRepository commentRepository) {
-		this.boardMapper = boardmapper;
 		this.fu = fu;
 		this.boardRepository = boardRepository;
 		this.commentRepository = commentRepository;

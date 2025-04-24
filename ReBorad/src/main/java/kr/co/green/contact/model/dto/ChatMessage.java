@@ -8,9 +8,12 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ChatMessage {
+	
 	private String sender;
     private String content;
     private String roomId;
     private String timestamp;
     private LocalDateTime createdAt;
+    private String type;
+    
 }

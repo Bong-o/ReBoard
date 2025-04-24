@@ -1,4 +1,4 @@
-package kr.co.green.contact.model.service;
+package kr.co.green.contact.service;
 
 import java.util.List;
 

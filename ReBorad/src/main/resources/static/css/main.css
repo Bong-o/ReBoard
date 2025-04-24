@@ -406,3 +406,9 @@ th {
 	margin-left: 10px;
 	cursor: pointer;
 }
+
+#chat-room-list li.disabled {
+	pointer-events: none;
+	color: gray;
+	font-weight: bold;
+}

@@ -37,6 +37,7 @@ public class GlobalModelAttributeAdvice {
 			if (memberOpt.isPresent()) {
 				SigninResDto memberResDto = new SigninResDto(memberOpt.get());
 			    model.addAttribute("memberName", memberResDto.getName());
+			    model.addAttribute("memberId", memberId);
 			}
 		}
 	}
