@@ -9,7 +9,7 @@ import java.util.UUID;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
-import kr.co.green.board.model.dto.FileDTO;
+import kr.co.green.board.data.dto.FileDTO;
 
 @Component
 public class FileUpload {

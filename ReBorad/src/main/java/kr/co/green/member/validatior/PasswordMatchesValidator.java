@@ -2,7 +2,7 @@ package kr.co.green.member.validatior;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-import kr.co.green.member.dto.req.SignupReqDto;
+import kr.co.green.member.data.dto.SignupReqDto;
 
 public class PasswordMatchesValidator implements ConstraintValidator<PasswordMatches, SignupReqDto> {
 	

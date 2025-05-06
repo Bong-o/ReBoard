@@ -5,7 +5,7 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import kr.co.green.member.entity.MemberEntity;
+import kr.co.green.member.data.entity.MemberEntity;
 
 @Repository
 public interface MemberRepository extends JpaRepository<MemberEntity, String> {

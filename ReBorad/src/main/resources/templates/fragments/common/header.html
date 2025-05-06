@@ -1,5 +1,5 @@
 <header th:fragment="HeaderFragment">
-	<h1>게시판</h1>
+	<a th:href="@{/board/free/list}"><h1>게시판</h1></a>
 
 	<div class="login-signup" th:if="${memberName != null}">
 		<a th:href="@{/member/logout}">로그아웃</a>

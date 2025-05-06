@@ -1,19 +1,16 @@
 package kr.co.green.member.service;
 
 import java.time.LocalDateTime;
-
 import java.util.Optional;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import kr.co.green.member.dto.req.SigninReqDto;
-import kr.co.green.member.dto.req.SignupReqDto;
-import kr.co.green.member.dto.res.SigninResDto;
-import kr.co.green.member.entity.MemberEntity;
+import kr.co.green.member.data.dto.SigninReqDto;
+import kr.co.green.member.data.dto.SigninResDto;
+import kr.co.green.member.data.dto.SignupReqDto;
+import kr.co.green.member.data.entity.MemberEntity;
 import kr.co.green.member.exception.MemberException;
 import kr.co.green.member.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;

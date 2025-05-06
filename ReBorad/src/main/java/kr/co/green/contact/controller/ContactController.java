@@ -1,95 +1,39 @@
 package kr.co.green.contact.controller;
 
 
-import org.springframework.stereotype.Controller;
+import java.util.List;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
-import kr.co.green.contact.model.dto.ContactDTO;
+import kr.co.green.contact.data.entity.ChatRoomEntity;
+import kr.co.green.contact.service.ChatService;
+import lombok.RequiredArgsConstructor;
 
 @Controller
 @RequestMapping("/contact")
+@RequiredArgsConstructor
 public class ContactController {
-//	private final ContactService contactService;
-//	
-//	public ContactController(ContactService contactService) {
-//		this.contactService = contactService; 
-//	}
-//	
-//	@GetMapping("/list")
-//	public String list(@RequestParam(value="currentPage", defaultValue="1") int currentPage,
-//					   Model model) {
-//		
-////		int postCount = 
-//		int pageLimit = 5;
-//		int boardLimit = 7;
-//		
-//		
-//		
-//		return "/contact/list";
-//	}
-//	
-//	@GetMapping("/enrollForm")
-//	public String enrollForm() {
-//		return "/contact/enroll";
-//	}
-//	
-//	@PostMapping("/enroll")
-//	public String enroll(ContactDTO contactDTO) {
-//		contactService.enroll(contactDTO);
-//		
-//		return "redirect:/";
-//	}
 	
+	private final ChatService chatService;
+
 	@GetMapping("/chatForm")
-	public String chat() {
+	public String chat(Model model) {
+		
+		List<ChatRoomEntity> rooms = chatService.getAllRooms();
+		
+		for (ChatRoomEntity room : rooms) {
+			System.out.println(room.getRoomId());
+			System.out.println(room.getRoomName());
+			System.out.println(room.getRoomPassword());
+			System.out.println(room.getCreatedAt());
+	    }
+		
+		model.addAttribute("rooms", rooms);
+		
 		return "/contact/chat";
 	}
 		
-	
-	
-	
-	
-//	@GetMapping("/list")
-//	public String list(Model model, SearchDTO searchDTO,
-//					   @RequestParam(value="currentPage", defaultValue="1") int currentPage) {
-//		
-//		int postPage ;
-//		int pageLimit = 5;
-//		int boardLimit = 7;
-//		
-//		List<ContactDTO> posts = contactService.getAllPosts();
-//			
-//		model.addAttribute("posts", posts);
-//		
-//		return "/contact/list";
-//	}
-	
-//	@GetMapping("/detail")
-//	public String detail(@RequestParam(value="no") int no,
-//						 Model model) {
-//		
-//		ContactDTO result = contactService.detail(no);
-//		
-//		model.addAttribute("post", result);
-//		
-//		return "/contact/detail";
-//	}
-	
-//	@GetMapping("/answerForm")
-//	public String answerForm(@RequestParam(value="no") int no,
-//			 				 Model model) { 
-//		
-//		ContactDTO result = contactService.detail(no);
-//		
-//		model.addAttribute("post", result);
-//		
-//		return "/contact/answer";
-//		
-//	}
-	
 }

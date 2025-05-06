@@ -28,9 +28,11 @@ public class SecurityConfig {
 			            	     "/static/**", 
 			            	     "/error",
 			            	     "/favicon.ico",
-			                     "/ws/**",               // <— allow SockJS handshake + info + xhr
-			                     "/app/**",              // if you expose any HTTP STOMP endpoints
-			                     "/topic/**").permitAll() // 로그인, 회원가입은 인증 없이
+			                     "/ws/**",               
+			                     "/app/**",              
+			                     "/topic/**",
+			                     "/api/chat/**")
+	            .permitAll() // 로그인, 회원가입은 인증 없이
 	            .anyRequest().authenticated()                      // 나머지는 인증 필요
 	        )
 	        .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)

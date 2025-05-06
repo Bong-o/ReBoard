@@ -1,9 +1,5 @@
 package kr.co.green.member.controller;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,12 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import jakarta.servlet.http.Cookie;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import kr.co.green.jwt.JwtUtil;
-import kr.co.green.member.dto.req.SigninReqDto;
-import kr.co.green.member.dto.req.SignupReqDto;
-import kr.co.green.member.dto.res.SigninResDto;
+import kr.co.green.member.data.dto.SigninReqDto;
+import kr.co.green.member.data.dto.SigninResDto;
+import kr.co.green.member.data.dto.SignupReqDto;
 import kr.co.green.member.service.MemberServiceImpl;
 import lombok.RequiredArgsConstructor;
 
@@ -76,7 +71,7 @@ public class MemberController {
 	        response.addCookie(accessCookie);
 	        response.addCookie(refreshCookie);
 	        
-			return "redirect:/";
+			return "redirect:/board/free/list";
 		} else {
 			return "redirect:/member/signin?error=true";
 		}

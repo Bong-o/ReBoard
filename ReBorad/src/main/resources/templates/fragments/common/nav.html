@@ -1,15 +1,5 @@
 <nav th:fragment="NavFragment">
 	<ul>
-		<li><a th:href="@{/}">홈</a></li>
-		<li><a href="../introduce/introduce.html">소개</a></li>
-		<li><a href="../portfolio/portfolio.html">포트폴리오</a></li>
-		<li class="menu-item"><a href="#">게시판</a>
-			<div class="submenu">
-				<a th:href="@{/board/free/list}">자유 게시판</a> <a
-					href="../board/없음.html">뉴스 게시판</a>
-			</div></li>
-		<li><a th:href="@{/contact/enrollForm}">문의하기</a></li>
-		<li><a th:href="@{/contact/list}">문의관리</a></li>
-		<li><a th:href="@{/contact/chatForm}">채팅</a></li>
+		<li><a th:href="@{/contact/chatForm}">실시간채팅</a></li>
 	</ul>
 </nav>

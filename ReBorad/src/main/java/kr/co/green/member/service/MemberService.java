@@ -1,8 +1,8 @@
 package kr.co.green.member.service;
 
-import kr.co.green.member.dto.req.SigninReqDto;
-import kr.co.green.member.dto.req.SignupReqDto;
-import kr.co.green.member.dto.res.SigninResDto;
+import kr.co.green.member.data.dto.SigninReqDto;
+import kr.co.green.member.data.dto.SigninResDto;
+import kr.co.green.member.data.dto.SignupReqDto;
 
 public interface MemberService {
 	

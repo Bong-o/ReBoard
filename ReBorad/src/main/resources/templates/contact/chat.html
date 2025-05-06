@@ -5,29 +5,44 @@
 	<header th:replace="~{fragments/common/header :: HeaderFragment}"></header>
 	<nav th:replace="~{fragments/common/nav :: NavFragment}"></nav>
 
-	<!-- <div id="user-infoName" th:data-name="${memberName}" style="display: none;"></div> -->
 	<div id="user-infoId" th:data-name="${memberId}" style="display: none;"></div>
+
 	<div id="chat-container">
 		<!-- 채팅방 목록 -->
 		<div id="chat-room-list">
-			<h3>채팅방</h3>
-			<ul>
-				<li onclick="enterRoom('room1')">방 1</li>
-				<!-- <li onclick="enterRoom('room2')">방 2</li>
-				<li onclick="enterRoom('room3')">방 3</li> -->
+			<div class="room-header">
+				<h3>채팅방</h3>
+				<button onclick="showCreateRoomForm()">＋</button>
+			</div>
+			<ul id="room-list" th:each="room, iterStat : ${rooms}">
+				<li th:attr="onclick='enterRoom(\'' + ${room.roomId} + '\')'">
+					<!-- th:text=${room.roomName}> -->
+					<span th:text="${room.roomName}" id="roomName"></span>
+				</li>
 			</ul>
 		</div>
 
 		<!-- 채팅창 -->
 		<div id="chat-window">
-			<div id="chat-title">채팅방을 선택하세요</div>
-			<div id="message-container">
+			<div id="chat-title" class="center-title">채팅방을 선택하세요</div>
+			<div id="message-container" style="display: none;">
 				<!-- 메시지가 여기에 출력됨 -->
 			</div>
-			<div id="input-form">
+			<div id="input-form" style="display: none;">
 				<input type="text" id="message-input" placeholder="메시지 입력..." />
 				<button id="send-btn" onclick="sendMessage()">전송</button>
 			</div>
+		</div>
+	</div>
+
+	<!-- 방 생성 폼 -->
+	<div id="create-room-form" style="display: none;">
+		<h4>채팅방 생성</h4>
+		<input type="text" id="new-room-name" placeholder="방 이름 입력" /> <input
+			type="password" id="new-room-password" placeholder="비밀번호 (선택)" />
+		<div class="btn-group">
+			<button onclick="createRoom()">생성</button>
+			<button onclick="hideCreateRoomForm()">취소</button>
 		</div>
 	</div>
 
